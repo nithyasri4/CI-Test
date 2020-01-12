@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t nitdesigns/node .
   - docker images nitdesigns/node
+
+  before deploy:
+  - docker login -u nithyasri4 -p Nithyasri86
+
+  deploy:
+   provider: script
+   script: docker push nitdesigns/node
+   on:
+    branch: master
