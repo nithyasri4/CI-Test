@@ -6,11 +6,11 @@ script:
   - docker build -t nithyasri4/node .
   - docker images nithyasri4/node
 
-  before deploy:
+before deploy:
   - docker login -u nithyasri4 -p Nithyasri86
 
-  deploy:
-   provider: script
-   script: docker push nithyasri4/node
-   on:
-    branch: master
+deploy:
+  provider: script
+  script: docker push nithyasri4/node
+  on:
+   branch: master
